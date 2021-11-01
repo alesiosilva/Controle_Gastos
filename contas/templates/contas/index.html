@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pg-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Template Index - App Contas</h1>
+    {% if ult_transacoes %} 
+    <ul>
+    {% for t in ult_transacoes %} 
+        <li><a href="{% url 'up_transacao' t.id %}">{{ t.descricao }} - {{ t.data }} - <b>R$ {{ t.valor }} </b></a></li>
+    {% endfor %} 
+    </ul>
+    {% else %} 
+        <h2>Sem transações lançadas ainda.</h2>
+    {% endif %} 
+    <a href="{% url 'nova_transacao' %}">Nova Transação</a>
+
+</body>
+</html>
