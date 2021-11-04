@@ -7,7 +7,7 @@
     <title>Nova transação</title>
 </head>
 <body>
-    <form method='POST' action=".">
+    <form method='POST' action="{{transacao.pk}}">
         <legend><h2>Nova transação</h2></legend>
         {% csrf_token %} 
         {{ form.as_p }}
